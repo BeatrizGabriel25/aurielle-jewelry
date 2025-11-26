@@ -8,11 +8,8 @@ body {
 }
 
 /* Topbar: logo à esquerda, ícones à direita */
-.topbar {
-  border-bottom:1px solid #F2F2F2;
-}
 .topbar-inner {
-  max-width:100%;
+  max-width:90%;
   margin:0 auto;
   padding:14px 40px;
   display:flex;
@@ -22,9 +19,9 @@ body {
 .brand-small {
   text-decoration:none;
   color:#2B2B2B;
-  font-weight:500;
+  font-weight:600;
   font-family:'Montserrat',sans-serif;
-  font-size:18px;
+  font-size:36px;
 }
 .top-icons a {
   margin-left:18px;
@@ -35,7 +32,7 @@ body {
 
 /* MAIN GRID: sidebar à esquerda + conteúdo à direita */
 .main-grid {
-  max-width:1200px;
+  max-width:90%;
   margin:0 auto;
   display:grid;
   grid-template-columns: 260px 1fr; /* sidebar fixa, resto para hero */
@@ -297,7 +294,7 @@ body {
   background: #F7F7F7;        /* suave, elegante */
   padding: 60px 20px;
   text-align: center;
-  margin-top: 80px;
+  margin-top: 90px;
 }
 
 .newsletter-section h2 {
@@ -357,10 +354,12 @@ body {
   padding: 60px 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px;
-  margin-top: 80px;
+  gap: 100px;
+  margin-top: 0px;
   align-items: start;
+  text-align: justify;
 }
+
 
 /* Colunas */
 .footer-column h3 {
@@ -368,6 +367,7 @@ body {
   font-size: 18px;
   color: #2B2B2B;
   margin-bottom: 20px;
+
 }
 
 .footer-column p {
@@ -431,6 +431,64 @@ body {
     justify-content: center;
   }
 }
+
+/* PAYMENT METHODS */
+.payment-section {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #f8f8f8;
+}
+
+.payment-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.payment-icon {
+  height: 35px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.payment-icon:hover {
+  opacity: 1;
+}
+
+/* COPYRIGHT */
+.copyright-section {
+  text-align: center;
+  padding: 40px 0;
+  background-color: #f8f8f8;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #444;
+  letter-spacing: 0.5px;
+}
+
+/* TOP ICONS */
+.top-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espaço entre ícones */
+}
+
+.top-icons .icon-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* Opcional: dar hover */
+.top-icons .icon-img:hover {
+  opacity: 0.6;
+}
+
+
+
 
 
 
