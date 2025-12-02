@@ -1,5 +1,8 @@
 ﻿/* reset */
-* { margin:0; padding:0; box-sizing:border-box; }
+* { margin:0; 
+  padding:0; 
+  box-sizing:border-box; 
+}
 
 body {
   font-family:'Montserrat',sans-serif;
@@ -23,11 +26,28 @@ body {
   font-family:'Montserrat',sans-serif;
   font-size:36px;
 }
+
+.top-icons {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
 .top-icons a {
   margin-left:18px;
   text-decoration:none;
   color:#2B2B2B;
   font-weight:500;
+}
+
+.top-icons .icon-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  cursor: pointer;
+}
+.top-icons .icon-img:hover {
+  opacity: 0.6;
 }
 
 /* MAIN GRID: sidebar à esquerda + conteúdo à direita */
@@ -42,6 +62,10 @@ body {
 }
 
 /* SIDEBAR: menu vertical */
+.sidebar {
+  display:block;
+}
+
 .nav {
   display:flex;
   flex-direction:column;
@@ -70,7 +94,7 @@ body {
   margin-top:0;
 }
 .hero-content h1 {
-  font-family:'Playfair Display',serif;
+  font-family:'Montserrat',serif;
   font-size:48px;
   margin-bottom:12px;
 }
@@ -101,7 +125,7 @@ body {
 
 .hero-caption {
   font-family: 'Montserrat',sans-serif;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 700; /* negrito */
   color: #2B2B2B;
   margin: 0;
@@ -109,7 +133,7 @@ body {
 
 .hero-description {
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   color: #2B2B2B;
   line-height: 1.6; /* para melhor leitura */
   margin-top: 15px; /* espaço entre legenda e parágrafo */
@@ -123,27 +147,28 @@ body {
   padding: 40px 0;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 70px;
   background: white; /* opcional */
-}
-
-.gallery img {
-  width: 250px;     /* maior já que agora há espaço */
-  height: 380px;    
-  object-fit: cover;
-  border-radius: 10px;
+  flex-wrap: wrap;
 }
 
 .gallery-item {
-  display: flex;
+  display:flex;
   flex-direction: column;
-  align-items: center; /* centraliza a legenda */
+  align-items:center;
+}
+
+.gallery img {
+  width: 270px;     /* maior já que agora há espaço */
+  height: 400px;    
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .gallery-caption a {
   margin-top: 10px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #2B2B2B;
   text-decoration: none;
@@ -154,35 +179,40 @@ body {
 }
 
 
+/* ACCOUNT PAGE — layout principal */
+/* Grid exclusivo para a página de conta */
+.account-page-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr; /* sidebar + formulário */
+  gap: 20px;
+  align-items: start; /* alinha topo da sidebar e do formulário */
+  padding: 40px;
+}
 
-/* RESPONSIVIDADE */
-@media (max-width: 900px){
-  .main-grid {
-    grid-template-columns: 1fr; /* empilha sidebar e hero */
-  }
-  .sidebar {
-    order:2;
-  }
-  .hero {
-    flex-direction:column;
-    gap:20px;
-  }
-  .hero-image img {
-    width:100%;
-  }
+/* Faz o formulário ocupar as 2 colunas do grid na account page */
+.account-page-grid .account-section {
+  grid-column: 1 / -1;   /* ocupa largura total do grid */
 }
 
 
-/* ACCOUNT PAGE — layout principal */
 .account-form {
   max-width: 600px;
-  padding: 40px 20px;
+  width: 100%;            /*ADICIONAR */
+  padding: 40px 0px;
   background: transparent;
 }
 
+.account-section {
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;     /* centra verticalmente */
+  padding: 0px;
+}
+
+
 .account-form h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
+  font-family: 'Montserrat', serif;
+  font-size: 28px;
   margin-bottom: 30px;
   color: #2B2B2B;
   text-align: left; /* mantém alinhado à esquerda */
@@ -228,7 +258,7 @@ body {
 }
 
 .submit-btn:hover {
-  background-color: #2B2B2B;
+  background-color: #D4B483;
 }
 
 
@@ -241,7 +271,7 @@ body {
 
 .forgot-password a {
   text-decoration: underline;
-  font-weight: 700; /* negrito */
+  font-weight: 600; /* negrito */
   color: #2B2B2B; /* cor do link igual ao resto do site */
   font-size: 10px;
 }
@@ -285,7 +315,7 @@ body {
 }
 
 .create-btn:hover {
-  background-color: #000;
+  background-color: #D4B483;
 }
 
 /* NEWSLETTER SECTION */
@@ -298,8 +328,8 @@ body {
 }
 
 .newsletter-section h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
+  font-family: 'Montserrat', serif;
+  font-size: 28px;
   color: #2B2B2B;
   margin-bottom: 20px;
 }
@@ -344,7 +374,7 @@ body {
 }
 
 .newsletter-form button:hover {
-  background: #000;
+  background:  #D4B483;
 }
 
 /* --- FOOTER SECTION --- */
@@ -354,7 +384,7 @@ body {
   padding: 60px 40px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 100px;
+  gap: 90px;
   margin-top: 0px;
   align-items: start;
   text-align: justify;
@@ -363,8 +393,8 @@ body {
 
 /* Colunas */
 .footer-column h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-family: 'Montserrat', serif;
+  font-size: 14px;
   color: #2B2B2B;
   margin-bottom: 20px;
 
@@ -372,9 +402,9 @@ body {
 
 .footer-column p {
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   color: #2B2B2B;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* SOCIAL ICONS */
@@ -403,7 +433,7 @@ body {
 
 .footer-nav a {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 11px;
   color: #2B2B2B;
   text-decoration: none;
 }
@@ -415,9 +445,9 @@ body {
 /* Store info */
 .store-info {
   font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
+  font-size: 11px;
   color: #2B2B2B;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* RESPONSIVE — 4 colunas viram 1 coluna no mobile */
@@ -463,7 +493,7 @@ body {
   background-color: #f8f8f8;
   width: 100%;
   font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   color: #444;
   letter-spacing: 0.5px;
 }
@@ -486,6 +516,219 @@ body {
 .top-icons .icon-img:hover {
   opacity: 0.6;
 }
+
+/* FULL WIDTH BANNER IMAGE */
+
+.fullwidth-banner {
+  width:85%;
+  height:80vh;
+  margin:60px auto;
+  border-radius:10px;
+  overflow:hidden;
+  position:relative;
+}
+
+.fullwidth-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px
+}
+
+
+.fullwidth-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay escuro suave */
+.banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.30);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+  color: #ffffff;
+}
+
+/* Título */
+.banner-overlay h2 {
+  font-family: 'Montserrat', serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+/* Texto */
+.banner-overlay p {
+  max-width: 520px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Botão CTA */
+.banner-btn {
+  padding: 14px 34px;
+  background: white;
+  color: black;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.banner-btn:hover {
+  background: #D4B483;
+  color: white;
+  transform: translateY(-2px);
+}
+
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px){
+  .hero-caption {
+    font-size:24px;
+  }
+  .hero-description {
+    font-size:14px;
+    padding:0 10px;
+  }
+  .banner-overlay {
+    padding:20px;
+  }
+  .banner-overlay h2 {
+    font-size:22px;
+  }
+  .banner-overlay p {
+    font-size:12px;
+    max-width:90%;
+  }
+  .banner-btn {
+    font-size:12px;
+    padding:10px 20px;
+  }
+  .newsletter-section h2 {
+    font-size:22px;
+  }
+  .newsletter-text {
+    font-size:12px;
+  }
+  .newsletter-form input,
+  .newsletter-form button {
+    width:80%;
+  }
+}
+
+@media (max-width: 480px){
+  .hero-caption {
+    font-size:20px;
+  }
+  .hero-description {
+    font-size:12px;
+  }
+  .banner-overlay h2 {
+    font-size:18px;
+  }
+  .banner-overlay p {
+    font-size:10px;
+  }
+  .banner-btn {
+    font-size:10px;
+    padding:8px 15px;
+  }
+  .footer-section {
+    padding:30px 10px;
+  }
+  .footer-column h3 {
+    font-size:12px;
+  }
+  .footer-column p,
+  .footer-nav a,
+  .store-info {
+    font-size:10px;
+  }
+  .payment-icon {
+    height:25px;
+  }
+  .topbar-inner {
+    flex-direction:column;
+    gap:10px;
+    padding:10px 20px;
+  }
+  .top-icons a {
+    font-size:12px;
+  }
+  .brand-small {
+    font-size:28px;
+  }
+}
+
+/* ACCOUNT PAGE GRID RESPONSIVO */
+@media (max-width: 1024px) {
+  .account-page-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* empilha sidebar + formulário */
+    gap: 20px;
+    padding: 20px;
+  }
+
+  /* Sidebar empilha acima ou abaixo do formulário */
+  .account-page-grid .sidebar {
+    order: -1; /* sidebar fica antes do formulário se quiser */
+    width: 100%;
+  }
+
+  /* Ajusta nav links */
+  .account-page-grid .nav {
+    flex-direction: row; /* pode virar horizontal em tablets, opcional */
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .account-page-grid .nav {
+    flex-direction: column; /* mobile vertical */
+    gap: 12px;
+  }
+  .account-form {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .account-form h1 {
+    font-size: 22px;
+  }
+  .form-box label {
+    font-size: 12px;
+  }
+  .form-box input {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .submit-btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+
+
 
 
 
