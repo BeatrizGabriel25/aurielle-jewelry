@@ -498,25 +498,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-/* TOP ICONS */
-.top-icons {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* espaço entre ícones */
-}
-
-.top-icons .icon-img {
-  width: 18px;
-  height: 18px;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-/* Opcional: dar hover */
-.top-icons .icon-img:hover {
-  opacity: 0.6;
-}
-
 /* FULL WIDTH BANNER IMAGE */
 
 .fullwidth-banner {
@@ -534,14 +515,6 @@ body {
   object-fit: cover;
   display: block;
   border-radius: 10px
-}
-
-
-.fullwidth-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 /* Overlay escuro suave */
